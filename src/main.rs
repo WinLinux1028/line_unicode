@@ -9,7 +9,7 @@ fn main() {
     let mut a = String::new();
     while 20400 >= a.len() {
         v.shuffle(&mut OsRng);
-        a.push('𰻞');
+        a.push('🤭');
         for i in &v {
             a.push_str(&String::from_utf8(vec![205, *i]).unwrap());
         }
