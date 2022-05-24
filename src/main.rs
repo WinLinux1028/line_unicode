@@ -14,7 +14,6 @@ fn main() {
             a.push_str(&String::from_utf8(vec![205, *i]).unwrap());
         }
     }
-    println!("{}", a.len());
     let mut output = File::create("./result.txt").unwrap();
     output.write_all(a.as_bytes()).unwrap();
 }
