@@ -5,9 +5,9 @@ use std::io::Write;
 
 fn main() {
     let mut v: Vec<u32> = (0x0300..=0x036F).collect();
-    let mut v1: Vec<u32> = (0x1AB0..=0x1ACE).collect();
+    let mut v1: Vec<u32> = (0x1DC0..=0x1DFF).collect();
     v.append(&mut v1);
-    let mut v2: Vec<u32> = (0x1DC0..=0x1DFF).collect();
+    let mut v2: Vec<u32> = (0x1AB0..=0x1ACE).collect();
     v.append(&mut v2);
     let mut v3: Vec<u32> = (0x20D0..=0x20F0).collect();
     v.append(&mut v3);
