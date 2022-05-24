@@ -1,0 +1,12 @@
+[package]
+name = "line_unicode"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[dependencies.rand]
+version = "0.8"
+features = ["small_rng", "min_const_gen", "nightly"]
