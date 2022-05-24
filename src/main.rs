@@ -15,7 +15,7 @@ fn main() {
     let mut v: Vec<char> = unsafe { std::mem::transmute(v) };
 
     let mut a = String::new();
-    while 1 >= a.len() {
+    while 20400 >= a.len() {
         v.shuffle(&mut OsRng);
         a.push_str("🇷🇺");
         for i in &v {
