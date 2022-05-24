@@ -1,19 +1,20 @@
-use rand::{rngs::OsRng, Rng};
+use rand::prelude::SliceRandom;
+use rand::rngs::OsRng;
 use std::fs::File;
 use std::io::Write;
 
 fn main() {
-    let mut a = Vec::new();
-    for _ in 0..10 {
-        a.extend_from_slice("𰻞".as_bytes());
-        for _ in 0..999 {
-            a.push(205);
-            a.push(OsRng.gen_range(128..=175));
+    let mut v: Vec<u8> = (128..=175).collect();
+
+    let mut a = String::new();
+    while 20400 >= a.len() {
+        v.shuffle(&mut OsRng);
+        a.push('𰻞');
+        for i in &v {
+            a.push_str(&String::from_utf8(vec![205, *i]).unwrap());
         }
     }
-    // 正当なUTF-8であることを確認
-    let a = String::from_utf8(a).unwrap();
-
+    println!("{}", a.len());
     let mut output = File::create("./result.txt").unwrap();
     output.write_all(a.as_bytes()).unwrap();
 }
